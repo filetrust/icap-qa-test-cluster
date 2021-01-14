@@ -6,11 +6,11 @@ There should be no manual processes outside of running scripts.
 
 ## To do
 
-1. Move terraform code across for following
-	- Cluster
-	- Keyvault
-	- Storage Account
-	- Storage account for statefile - can be store in tfstate
+1. ~~Move terraform code across for following~~
+	- ~~Cluster~~
+	- ~~Keyvault~~
+	- ~~Storage Account~~
+	- ~~Storage account for statefile - can be store in tfstate~~
 2. Move scripts across
 	- keyvault secrets script
 	- Kube secret scripts
