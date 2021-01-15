@@ -12,7 +12,7 @@ There should be no manual processes outside of running scripts.
 	- ~~Storage Account~~
 	- ~~Storage account for statefile - can be store in tfstate~~
 2. Move scripts across
-	- keyvault secrets script
+	- ~~keyvault secrets script~~
 	- Kube secret scripts
 3. Adapt scripts or make one large script to stand up efficiently
 4. Test
