@@ -17,6 +17,19 @@ NCFS="./ncfs"
 RABBIT_OP="./rabbitmq-operator"
 MONITORING=
 
+kubectl config use-context gw-icap-qa-neu-01
+
+# Deploy charts
+(cd $DIRECTORY; helm install $RABBIT_OP -n $NAMESPACE04 --generate-name --set secrets=null)
+echo ""
+(cd $DIRECTORY; helm install $ADAPTATION -n $NAMESPACE01 --generate-name --set secrets=null)
+echo ""
+(cd $DIRECTORY; helm install $ADMINISTRATION -n $NAMESPACE02 --generate-name --set secrets=null)
+echo ""
+(cd $DIRECTORY; helm install $NCFS -n $NAMESPACE03 --generate-name --set secrets=null)
+
+kubectl config use-context gw-icap-qa-uks-02
+
 # Deploy charts
 (cd $DIRECTORY; helm install $RABBIT_OP -n $NAMESPACE04 --generate-name --set secrets=null)
 echo ""

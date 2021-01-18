@@ -71,7 +71,7 @@ UKS Secret Script
 
 ### Install charts via Helm
 
-You need to run this script on both contexts in order to deploy the services for the icap client and UI:
+Run the script below to install the charts via helm on both clusters
 
 ```bash
 ./script/install-helm-charts/install-charts.sh
