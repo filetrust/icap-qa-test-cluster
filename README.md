@@ -54,7 +54,7 @@ az aks get-credentials --resource-group icap-aks-qa-test-uks-02 --name gw-icap-q
 
 You will also need to generate a TLS key and a cert, use the following command:
 
-***You do not need to enter any text when you run this command, you can press enter until it executes***
+***You do not need to enter any text when you run this command, you can press enter until it completes***
 
 ```bash
 openssl req -newkey rsa:2048 -nodes -keyout tls.key -x509 -days 365 -out certificate.crt
@@ -76,4 +76,27 @@ Run the script below to install the charts via helm on both clusters
 ```bash
 ./script/install-helm-charts/install-charts.sh
 ```
+
+### Destroying the clusters
+
+When destroying the deployment you will only need to delete the clusters and you can do so with the following command:
+
+```bash
+terraform destroy -target=module.create_aks_cluster_UKSouth.azurerm_kubernetes_cluster.icap-deploy -target=module.create_aks_cluster_NEU.azurerm_kubernetes_cluster.icap-deploy
+```
+
+Type yes and then wait for terraform to complete the destruction of the clusters
+
+If you want to destroy a single cluster, use the above but only target the single cluster module you want to destroy.
+
+```bash
+terraform destroy -target=module.create_aks_cluster_NEU.azurerm_kubernetes_cluster.icap-deploy
+```
+
+### Adding more clusters
+
+Please follow below to add another cluster.
+
+
+
 
